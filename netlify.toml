@@ -1,0 +1,10 @@
+[build]
+  base = "/"  # Specify base directory if your project is in a subdirectory
+  command = "npm install && npm start"  # Install dependencies and then run npm start
+  publish = "build"  # Specify the folder where your build output is (e.g., "build" or "public")
+  functions = "netlify/functions"  # Specify the directory for serverless functions if applicable
+
+[[plugins]]
+  package = "@netlify/plugin-run-build-command"
+  [plugins.inputs]
+    command = "npm start"  # Optional: If you want to run npm start after build as part of plugin
